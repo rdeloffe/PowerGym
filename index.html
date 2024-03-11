@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
-    <title>Inscription PowerAI</title>
+    <title>Inscription PowerGym</title>
 </head>
 <body>
 
+<div class="navbar">
+    <div class="connection-button">
+        <a href="#">Connexion</a>
+    </div>
+</div>
+
+<div class="image-container">
+    <!-- Mettez votre image ici -->
+</div>
+
 <div class="container">
-    <h2>Inscription PowerAI</h2>
-    <form id="inscriptionForm" action="acceuil.html" method="post">
+    <h2>Inscription PowerGym</h2>
+    <form id="inscriptionForm" action="acceuil.html" method="post" class="form">
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" required>
 
@@ -49,11 +58,9 @@
         <label for="seances">Nombre de séances par semaine souhaitées (maximum 7) :</label>
         <input type="number" id="seances" name="seances" min="1" max="7" required>
 
-        <input type="submit" value="S'inscrire">
+        <input type="submit" value="Finalisation de l'inscription" class="submit-button">
     </form>
 </div>
-
-
 
 </body>
 </html>

@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #9E9E9E;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barre de navigation */
+.navbar {
+    background-color: black;
+    padding: 30px 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.inscription-button a {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.inscription-button a:hover {
+    background-color: darkorange;
+}
+
+/* Zone pour mettre une image */
+.image-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Zone de texte */
+.text-container {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: auto; /* Centrer horizontalement */
+    margin-right: auto; /* Centrer horizontalement */
+    width: 80%; /* Définir la largeur */
+    height: auto; /* Ajustement automatique de la hauteur */
+    overflow: auto; /* Ajouter une barre de défilement si le contenu dépasse */
+}
+
+/* Titre de présentation */
+.presentation {
+    text-align: center; /* Centrer horizontalement */
+    margin-top: 50px; /* Marge top pour espacer du haut de la page */
+    color: orange; /* Couleur du texte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Effet d'ombre */
+    font-size: 200%; /* Doubler la taille du texte */
+}
+
+
+
