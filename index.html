@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Inscription PowerAI</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>Inscription PowerAI</h2>
+    <form id="inscriptionForm" action="acceuil.html" method="post">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required title="Le mot de passe doit contenir au moins 8 caractères, au moins une lettre et un chiffre">
+
+        <label for="confirmPassword">Confirmation du mot de passe :</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <label for="identite-age">Âge :</label>
+        <input type="number" id="identite-age" name="identite-age" required>
+
+        <label for="identite-taille">Taille (en cm) :</label>
+        <input type="number" id="identite-taille" name="identite-taille" required>
+
+        <label for="identite-poids">Poids (en kg) :</label>
+        <input type="number" id="identite-poids" name="identite-poids" required>
+
+        <label for="objectif">Objectif du programme :</label>
+        <select id="objectif" name="objectif" required>
+            <option value="perte_poids">Perte de poids</option>
+            <option value="prise_muscle">Prise de muscle</option>
+            <option value="maintien_muscle">Maintien musculaire</option>
+        </select>
+
+        <label for="seances">Nombre de séances par semaine souhaitées (maximum 7) :</label>
+        <input type="number" id="seances" name="seances" min="1" max="7" required>
+
+        <input type="submit" value="S'inscrire">
+    </form>
+    <!-- Zone pour afficher les messages d'erreur -->
+    <div id="errorMessages"></div>
+</div>
+
+</body>
+</html>
