@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
     <title>Inscription PowerAI</title>
 </head>
 <body>
@@ -21,10 +22,13 @@
         <input type="email" id="email" name="email" required>
 
         <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required title="Le mot de passe doit contenir au moins 8 caractères, au moins une lettre et un chiffre">
+        <input type="password" id="password" name="password" required>
 
         <label for="confirmPassword">Confirmation du mot de passe :</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <!-- Affichage de l'erreur -->
+        <div id="passwordMatchError" style="color: red;"></div>
 
         <label for="identite-age">Âge :</label>
         <input type="number" id="identite-age" name="identite-age" required>
@@ -47,9 +51,9 @@
 
         <input type="submit" value="S'inscrire">
     </form>
-    <!-- Zone pour afficher les messages d'erreur -->
-    <div id="errorMessages"></div>
 </div>
+
+
 
 </body>
 </html>
