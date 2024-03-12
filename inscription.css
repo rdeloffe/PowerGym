@@ -10,7 +10,12 @@ body {
     background-color: black;
     padding: 30px 30px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between; /* Pour répartir les éléments sur la largeur */
+}
+
+.inscription-button {
+    display: flex; /* Utiliser flexbox */
+    align-items: center; /* Centrer verticalement les éléments */
 }
 
 .inscription-button a {
@@ -19,7 +24,6 @@ body {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    
 }
 
 .inscription-button a:hover {
