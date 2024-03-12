@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #9E9E9E;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barre de navigation */
+.navbar {
+    background-color: black;
+    padding: 30px 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.inscription-button a {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.inscription-button a:hover {
+    background-color: darkorange;
+}
+
+/* Zone pour mettre une image */
+.image-container {
+    text-align: center;
+}
+
+.statue-image{
+    width: 25%;
+}
+
+.program-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    background-color: rgb(79, 79, 79);
+}
+.week-program-summary-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.training-summary {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.training-summary h2 {
+    margin-left: 10%;
+}
+
+#trainings-container {
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    color: white;
+}
+
+h2{
+    color: orange;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+h3 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+h1 {
+        color: orange;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* Zone de texte */
+.text-container {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: auto; /* Centrer horizontalement */
+    margin-right: auto; /* Centrer horizontalement */
+    width: 80%; /* Définir la largeur */
+    height: auto; /* Ajustement automatique de la hauteur */
+    overflow: auto; /* Ajouter une barre de défilement si le contenu dépasse */
+}
+
+/* Titre de présentation */
+.presentation {
+    text-align: center; /* Centrer horizontalement */
+    margin-top: 50px; /* Marge top pour espacer du haut de la page */
+    color: orange; /* Couleur du texte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Effet d'ombre */
+    font-size: 200%; /* Doubler la taille du texte */
+}
+
+
+
