@@ -10,8 +10,8 @@
     <!-- Barre de navigation -->
     <div class="navbar">
         <div class="inscription-button">
-            <a href="inscription.html">Inscription</a>
-            <a href="connexion.html">Connexion</a>
+            <a href="inscription.php">Inscription</a>
+            <a href="connexion.php">Connexion</a>
         </div>
     </div>
 

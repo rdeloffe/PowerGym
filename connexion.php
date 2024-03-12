@@ -11,13 +11,13 @@
     <!-- Barre de navigation -->
     <div class="navbar">
         <div class="logo">
-            <!-- Lien autour de l'image pour rediriger vers accueil.html -->
-            <a href="accueil.html">
+            <!-- Lien autour de l'image pour rediriger vers accueil.php -->
+            <a href="accueil.php">
                 <img src="img/nice.png" alt="" width="50" height="50">
             </a>
         </div>
         <div class="inscription-button">
-            <a href="connexion.html">Connexion</a>
+            <a href="connexion.php">Connexion</a>
         </div>
     </div>
 
@@ -32,7 +32,7 @@
 <div class="container">
     
     <div class="form">
-        <form id="inscriptionForm" action="accueil.html" method="post">
+        <form id="inscriptionForm" action="accueil.php" method="post">
             
 
             
