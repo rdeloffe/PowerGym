@@ -10,23 +10,26 @@
 <body>
     <!-- Barre de navigation -->
     <div class="navbar">
+        <div class="logo">
+            <!-- Lien autour de l'image pour rediriger vers accueil.html -->
+            <a href="accueil.html">
+                <img src="img/nice.png" alt="" width="50" height="50">
+            </a>
+        </div>
         <div class="inscription-button">
-            <a href="index.html">Connexion</a>
+            <a href="connexion.html">Connexion</a>
         </div>
     </div>
-
+    
     <!-- Zone pour mettre une image -->
     <div class="image-container">
         <img src="img/nice.png" alt="">
         <!-- Mettez votre image ici -->
     </div>
 
-    
-
-<div class="container">
-    
-    <div class="form">
-        <form id="inscriptionForm" action="accueil.html" method="post">
+    <div class="container">
+        <div class="form">
+            <form id="inscriptionForm" action="accueil.html" method="post">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
 
