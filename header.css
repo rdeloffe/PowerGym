@@ -1,0 +1,26 @@
+.navbar {
+    background-color: black;
+    display: flex;
+    justify-content: right; /* Pour répartir les éléments sur la largeur */
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.inscription-button {
+    display: flex; /* Utiliser flexbox */
+    align-items: center; /* Centrer verticalement les éléments */
+    margin: 0.5em;
+}
+
+.inscription-button a {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.inscription-button a:hover {
+    background-color: darkorange;
+}

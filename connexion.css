@@ -5,30 +5,7 @@ body {
     padding: 0;
 }
 
-/* Barre de navigation */
-.navbar {
-    background-color: black;
-    padding: 30px 30px;
-    display: flex;
-    justify-content: space-between; /* Pour répartir les éléments sur la largeur */
-}
 
-.inscription-button {
-    display: flex; /* Utiliser flexbox */
-    align-items: center; /* Centrer verticalement les éléments */
-}
-
-.inscription-button a {
-    background-color: orange;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.inscription-button a:hover {
-    background-color: darkorange;
-}
 
 /* Zone pour mettre une image */
 .image-container {

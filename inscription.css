@@ -5,31 +5,6 @@ body {
     padding: 0;
 }
 
-/* Barre de navigation */
-.navbar {
-    background-color: black;
-    padding: 30px 30px;
-    display: flex;
-    justify-content: space-between; /* Pour répartir les éléments sur la largeur */
-}
-
-.inscription-button {
-    display: flex; /* Utiliser flexbox */
-    align-items: center; /* Centrer verticalement les éléments */
-}
-
-.inscription-button a {
-    background-color: orange;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.inscription-button a:hover {
-    background-color: darkorange;
-}
-
 /* Zone pour mettre une image */
 .image-container {
     margin-top: 20px;
@@ -37,7 +12,7 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 100%;
     margin: 50px auto; /* Marge automatique sur le haut et le bas, centrage horizontal */
     text-align: center; /* Centrage des éléments internes */
 }
@@ -51,6 +26,7 @@ body {
     width: 100%; /* Pour centrer le formulaire */
     max-width: 400px; /* Limiter la largeur du formulaire */
     margin: 0 auto; /* Centrage horizontal */
+    padding: 0 20px; /* Ajout de padding pour les petits écrans */
 }
 
 .form label {
@@ -87,3 +63,12 @@ body {
 .form input[type="submit"]:hover {
     background-color: orange;
 }
+
+/* Media queries pour rendre le formulaire responsive */
+
+@media screen and (max-width: 600px) {
+    .form {
+        padding: 0 10px; /* Réduire le padding pour les écrans plus petits */
+    }
+}
+
