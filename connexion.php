@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="connexion.css">
-    <script src="script.js"></script>
+    
     <title>Connexion PowerGym</title>
 </head>
 <body>
@@ -32,10 +32,7 @@
 <div class="container">
     
     <div class="form">
-        <form id="inscriptionForm" action="accueil.php" method="post">
-            
-
-            
+        <form id="connexionForm" action="" method="post">
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
 
@@ -43,9 +40,39 @@
             <input type="password" id="password" name="password" required>
 
             <input type="submit" value="Connexion" class="submit-button">
+            <div id="error-message" style="color: red;"></div>
         </form>
     </div>
 </div>
+<!-- Inclure jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Script AJAX -->
+<script>
+    $(document).ready(function(){
+        $('#connexionForm').submit(function(e){
+            e.preventDefault(); // Empêche la soumission du formulaire par défaut
+            
+            // Récupérer les données du formulaire
+            var formData = $(this).serialize();
+            
+            // Envoyer une requête AJAX
+            $.ajax({
+                type: 'POST',
+                url: 'traitement_connexion.php', // L'URL où traiter la soumission du formulaire
+                data: formData,
+                success: function(response){
+                    if(response.trim() === "Success") {
+                        window.location.href = "programme.php"; // Redirection vers programme.php
+                    } else {
+                        // Afficher la réponse du serveur dans #error-message
+                        $('#error-message').html(response);
+                    }
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
