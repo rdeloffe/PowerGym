@@ -1,3 +1,48 @@
+<?php
+require_once 'includes/config.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (verificationEmail($conn)) {
+        insererUtilisateur($conn);
+    } else {
+        echo 'Email déja utilisé.';
+    }
+}
+
+function verificationEmail($conn)
+{
+    $email = $_POST['email'];
+    $query = "SELECT * FROM utilisateurs WHERE Email='$email'";
+
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function insererUtilisateur($conn)
+{
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $age = $_POST['identite-age'];
+    $taille = $_POST['identite-taille'];
+    $poids = $_POST['identite-poids'];
+    $seances = $_POST['seances'];
+    $sql = "INSERT INTO utilisateurs (Role, Email,Mot_De_Passe,Nom,Prenom,Age,Sexe,Taille,Poids,Programme_id,Nombre_Seances_Semaine)
+            VALUES (1,'$email','$password','$nom','$prenom','$age','M','$taille','$poids',1,'$seances')";
+    if ($conn->query($sql) === true) {
+        echo 'Nouvel enregistrement créé avec succès';
+    } else {
+        echo 'Erreur : ' . $sql . '<br>' . $conn->error;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
