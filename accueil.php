@@ -26,14 +26,14 @@ function verificationEmail($conn)
 
 function insererUtilisateur($conn)
 {
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $age = $_POST['identite-age'];
-    $taille = $_POST['identite-taille'];
-    $poids = $_POST['identite-poids'];
-    $seances = $_POST['seances'];
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Pas besoin d'échapper après le hachage
+    $nom = mysqli_real_escape_string($conn, strip_tags($_POST['nom']));
+    $prenom = mysqli_real_escape_string($conn, strip_tags($_POST['prenom']));
+    $age = mysqli_real_escape_string($conn, strip_tags($_POST['identite-age']));
+    $taille = mysqli_real_escape_string($conn, strip_tags($_POST['identite-taille']));
+    $poids = mysqli_real_escape_string($conn, strip_tags($_POST['identite-poids']));
+    $seances = mysqli_real_escape_string($conn, strip_tags($_POST['seances']));
     $sql = "INSERT INTO utilisateurs (Role, Email,Mot_De_Passe,Nom,Prenom,Age,Sexe,Taille,Poids,Programme_id,Nombre_Seances_Semaine)
             VALUES (1,'$email','$password','$nom','$prenom','$age','M','$taille','$poids',1,'$seances')";
     if ($conn->query($sql) === true) {
