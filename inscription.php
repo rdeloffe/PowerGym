@@ -6,6 +6,7 @@ require_once 'includes/config.php'; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="inscription.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
     <script src="script.js"></script>
     <title>Inscription PowerGym</title>
 </head>
