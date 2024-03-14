@@ -32,11 +32,21 @@ function insererUtilisateur($conn)
     $nom = mysqli_real_escape_string($conn, strip_tags($_POST['nom']));
     $prenom = mysqli_real_escape_string($conn, strip_tags($_POST['prenom']));
     $age = mysqli_real_escape_string($conn, strip_tags($_POST['identite-age']));
-    $taille = mysqli_real_escape_string($conn, strip_tags($_POST['identite-taille']));
-    $poids = mysqli_real_escape_string($conn, strip_tags($_POST['identite-poids']));
+    $taille = mysqli_real_escape_string(
+        $conn,
+        strip_tags($_POST['identite-taille'])
+    );
+    $poids = mysqli_real_escape_string(
+        $conn,
+        strip_tags($_POST['identite-poids'])
+    );
+    $objectif = mysqli_real_escape_string(
+        $conn,
+        strip_tags($_POST['objectif'])
+    );
     $seances = mysqli_real_escape_string($conn, strip_tags($_POST['seances']));
     $sql = "INSERT INTO utilisateurs (Role, Email,Mot_De_Passe,Nom,Prenom,Age,Sexe,Taille,Poids,Programme_id,Nombre_Seances_Semaine)
-            VALUES (1,'$email','$password','$nom','$prenom','$age','M','$taille','$poids',1,'$seances')";
+            VALUES (1,'$email','$password','$nom','$prenom','$age','M','$taille','$poids',$objectif,'$seances')";
     if ($conn->query($sql) === true) {
         echo 'Nouvel enregistrement créé avec succès';
     } else {
