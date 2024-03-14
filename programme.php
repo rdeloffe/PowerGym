@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Votre Programme Sportif</title>
+    <link rel="stylesheet" type="text/css" href="programme.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0;
+            background-color: #9E9E9E;
         }
         .programme {
+            margin-top: 40px;
             margin-bottom: 20px;
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+
+        h2, h1 {
+            color: orange;
         }
         .seance {
-            background-color: #ffffff;
+            background-color: #9E9E9E;
             padding: 10px;
             margin-bottom: 10px;
             border-radius: 5px;
@@ -26,6 +34,21 @@
     </style>
 </head>
 <body>
+<div class="navbar">
+        <div class="titrenav">
+            <a href="accueil.php" style="text-decoration: none; color: white;">
+                <p>POWERGYM</p>
+            </a>
+        </div>
+
+        <div class="inscription-button">
+            <a href="connexion.php">Connexion</a>
+        </div>
+
+        <div class="inscription-button">
+            <a href="inscription.php">Inscription</a>
+        </div>
+    </div>
 <?php
 
 require_once 'includes/config.php';
@@ -96,6 +119,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 $email = $_SESSION['email'];
 
+
 // Préparer la requête SQL pour récupérer le Programme_id et Nombre_Seances_Semaine
 $query = "SELECT Programme_id, Nombre_Seances_Semaine FROM utilisateurs WHERE Id_Utilisateur = ?";
 
@@ -121,9 +145,18 @@ if ($stmt = $conn->prepare($query)) {
             // Vous pouvez utiliser ces informations pour les afficher à l'utilisateur ou pour d'autres traitements
         
             echo "<div class='programme'>";
-            echo "<h1>Programme : " . $rowProgramme['nom'] . "</h1>";
+            $type = "";
+            if ($rowProgramme['type'] == 1) {
+                $type = "Perte de poids";
+            } elseif ($rowProgramme['type'] == 2) {
+                $type = "Prise de muscle";
+                echo "<h1>Programme de prise de muscle</h1>";
+            } elseif ($rowProgramme['type'] == 3) {
+                $type = "Maintien musculaire";
+            }
+            echo "<h1 class='program-title' style='margin-top: 7%;'>Programme : " . $type . " pour ".  $rowProgramme['nb_jours'] ." jours </h1>";
 
-             // ID du programme trouvé
+             // ID du programme trouvé"
              $idProgrammeTrouve = $rowProgramme['id_programme'];
 
             // Préparer la requête SQL pour récupérer les séances associées à ce programme
