@@ -68,6 +68,47 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 $email = $_SESSION['email'];
 
+// Préparer la requête SQL pour récupérer le Programme_id et Nombre_Seances_Semaine
+$query = "SELECT Programme_id, Nombre_Seances_Semaine FROM utilisateurs WHERE Id_Utilisateur = ?";
+
+if ($stmt = $conn->prepare($query)) {
+    // Lier le paramètre id de l'utilisateur avec le placeholder
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $stmt->bind_result($programme_id, $nombre_seances_semaine);
+    $stmt->fetch();
+    $stmt->close();
+
+    // Préparer la requête SQL pour récupérer le programme adéquat
+    $queryProgramme = "SELECT * FROM liste_programme WHERE type = ? AND nb_jours = ?";
+    
+    if ($stmtProgramme = $conn->prepare($queryProgramme)) {
+        // Lier les paramètres Programme_id et Nombre_Seances_Semaine avec les placeholders
+        $stmtProgramme->bind_param("ii", $programme_id, $nombre_seances_semaine);
+        $stmtProgramme->execute();
+        $resultProgramme = $stmtProgramme->get_result();
+        
+        if ($rowProgramme = $resultProgramme->fetch_assoc()) {
+            // Maintenant, $rowProgramme contient les informations du programme correspondant
+            // Vous pouvez utiliser ces informations pour les afficher à l'utilisateur ou pour d'autres traitements
+            echo "Programme correspondant trouvé : " . $rowProgramme['nom'];
+        } else {
+            echo "Aucun programme correspondant trouvé.";
+        }
+        
+        $stmtProgramme->close();
+    } else {
+        echo "Erreur de préparation : " . $conn->error;
+    }
+    
+} else {
+    echo "Erreur de préparation : " . $conn->error;
+}
+
+
+// Fermer la connexion à la base de données
+$conn->close();
+
 // Par exemple, afficher l'identifiant de l'utilisateur
 echo "Identifiant de l'utilisateur : " . $user_id;
 echo '<br>Vous êtes connecté en tant que : ' . $email;
