@@ -61,9 +61,9 @@ require_once 'includes/config.php'; ?>
 
             <label for="objectif">Objectif du programme :</label>
             <select id="objectif" name="objectif" required>
-                <option value="perte_poids">Perte de poids</option>
-                <option value="prise_muscle">Prise de muscle</option>
-                <option value="maintien_muscle">Maintien musculaire</option>
+                <option value="1">Perte de poids</option>
+                <option value="2">Prise de muscle</option>
+                <option value="3">Maintien musculaire</option>
             </select>
 
             <label for="seances">Nombre de séances par semaine souhaitées (maximum 7) :</label>
