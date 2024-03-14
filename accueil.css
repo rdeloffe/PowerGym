@@ -7,9 +7,15 @@ body {
 
 /* Zone pour mettre une image */
 .image-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
     margin-top: 20px;
-    display: block;
-    width: 100;
+}
+
+.image-container img {
+    width: 300px; /* Définir une largeur appropriée */
+    height: auto; /* Ajuster la hauteur en fonction de la largeur */
 }
 
 /* Zone de texte */
@@ -42,6 +48,3 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-
-

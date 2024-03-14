@@ -1,7 +1,7 @@
 <?php
 $servername = 'localhost';
 $username = 'root';
-$password = '';
+$password = 'root';
 $dbname = 'coach_sportif';
 
 //On établit la connexion
