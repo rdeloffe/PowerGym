@@ -7,27 +7,27 @@ body {
 
 /* Barre de navigation */
 .navbar {
-    background-color: black;
-    padding: 30px 30px;
-    display: flex;
-    justify-content: space-between; /* Pour répartir les éléments sur la largeur */
+    background-color: #333; /* Couleur de fond */
+    overflow: hidden;
 }
 
-.inscription-button {
-    display: flex; /* Utiliser flexbox */
-    align-items: center; /* Centrer verticalement les éléments */
+.navbar .logo img {
+    width: 50px;
+    height: 50px;
 }
 
-.inscription-button a {
-    background-color: orange;
+.navbar a {
+    float: right;
+    display: block;
     color: white;
-    padding: 10px 20px;
+    text-align: center;
+    padding: 14px 20px;
     text-decoration: none;
-    border-radius: 5px;
 }
 
-.inscription-button a:hover {
-    background-color: darkorange;
+.navbar a:hover {
+    background-color: #ddd; /* Couleur de fond au survol */
+    color: black;
 }
 
 /* Zone pour mettre une image */
@@ -37,53 +37,35 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 100%;
     margin: 50px auto; /* Marge automatique sur le haut et le bas, centrage horizontal */
     text-align: center; /* Centrage des éléments internes */
-}
-
-.text {
-    text-align: center;
-    margin-bottom: 20px; /* Ajout d'un espace en dessous du texte */
 }
 
 .form {
     width: 100%; /* Pour centrer le formulaire */
     max-width: 400px; /* Limiter la largeur du formulaire */
     margin: 0 auto; /* Centrage horizontal */
+    padding: 20px; /* Ajout de padding pour les petits écrans */
+    background-color: #f2f2f2; /* Couleur de fond */
+    border-radius: 10px; /* Coins arrondis */
 }
 
 .form label {
     display: block;
-    margin-bottom: 5px;
-    text-align: center; /* Centrage horizontal du texte */
-    color: orange; /* Couleur orange */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre */
-    font-style: italic; /* Texte en italique */
+    margin-bottom: 10px;
+    color: #fff; /* Couleur blanche */
+    font-size: 18px;
 }
 
 .form input,
 .form select {
-    width: 100%; /* Remplissage de la largeur du formulaire */
-    box-sizing: border-box; /* Pour inclure le padding et la bordure dans la largeur */
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.form input[type="submit"] {
-    width: 100%; /* Remplissage de la largeur du bouton */
-    background-color: orange;
-    color: #fff;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
     border: none;
-    padding: 10px;
-    font-size: 16px;
     border-radius: 5px;
-    cursor: pointer;
+    font-size: 16px;
 }
 
-.form input[type="submit"]:hover {
-    background-color: orange;
-}
+

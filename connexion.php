@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="connexion.css">
-    
+    <link rel="stylesheet" type="text/css" href="header.css">
+    <script src="script.js"></script>
     <title>Connexion PowerGym</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
             </a>
         </div>
         <div class="inscription-button">
-            <a href="connexion.php">Connexion</a>
+            <a href="inscription.php">Inscription</a>
         </div>
     </div>
 

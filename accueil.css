@@ -5,31 +5,17 @@ body {
     padding: 0;
 }
 
-/* Barre de navigation */
-.navbar {
-    background-color: black;
-    padding: 30px 30px;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.inscription-button a {
-    background-color: orange;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.inscription-button a:hover {
-    background-color: darkorange;
-}
-
 /* Zone pour mettre une image */
 .image-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
     margin-top: 20px;
-    text-align: center;
-    
+}
+
+.image-container img {
+    width: 300px; /* Définir une largeur appropriée */
+    height: auto; /* Ajuster la hauteur en fonction de la largeur */
 }
 
 /* Zone de texte */
@@ -51,8 +37,14 @@ body {
     margin-top: 50px; /* Marge top pour espacer du haut de la page */
     color: orange; /* Couleur du texte */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Effet d'ombre */
-    font-size: 200%; /* Doubler la taille du texte */
+    font-size: 2em; /* Doubler la taille du texte */
+    width: 100%;
 }
 
-
-
+.accueil-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
