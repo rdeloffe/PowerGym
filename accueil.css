@@ -5,6 +5,8 @@ body {
     padding: 0;
 }
 
+
+
 /* Zone pour mettre une image */
 .image-container {
     display: flex;
@@ -16,6 +18,7 @@ body {
 .image-container img {
     width: 300px; /* Définir une largeur appropriée */
     height: auto; /* Ajuster la hauteur en fonction de la largeur */
+    padding-top: 2em;
 }
 
 /* Zone de texte */

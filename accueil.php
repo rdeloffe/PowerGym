@@ -57,14 +57,22 @@ function insererUtilisateur($conn)
 <body>
     <!-- Barre de navigation -->
     <div class="navbar">
-        <div class="inscription-button">
-            <a href="inscription.php">Inscription</a>
+        <div class="titrenav">
+            <a href="accueil.php" style="text-decoration: none; color: white;">
+                <p>POWERGYM</p>
+            </a>
         </div>
 
         <div class="inscription-button">
             <a href="connexion.php">Connexion</a>
         </div>
+
+        <div class="inscription-button">
+            <a href="inscription.php">Inscription</a>
+        </div>
     </div>
+
+
     <div class="accueil-container">
         <!-- Zone pour mettre une image -->
         <div class="image-container">

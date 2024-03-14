@@ -1,7 +1,8 @@
 .navbar {
     background-color: black;
     display: flex;
-    justify-content: right; /* Pour répartir les éléments sur la largeur */
+    justify-content: space-between; /* Pour placer les éléments au début et à la fin */
+    align-items: center; /* Centrer verticalement les éléments */
     position: fixed;
     top: 0;
     width: 100%;
@@ -23,4 +24,19 @@
 
 .inscription-button a:hover {
     background-color: darkorange;
+}
+
+.titrenav {
+    text-align: center; /* Centrer le texte horizontalement */
+    color: white;
+    flex-grow: 1; /* Permet au titre de prendre autant d'espace que possible */
+    order: 1; /* Place le titre à gauche */
+}
+
+.inscription-button:nth-child(1) {
+    order: 3; /* Place le premier bouton à droite */
+}
+
+.inscription-button:nth-child(2) {
+    order: 4; /* Place le deuxième bouton à droite */
 }
