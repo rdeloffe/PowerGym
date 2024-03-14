@@ -1,3 +1,5 @@
+<?php
+require_once 'includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,23 +12,26 @@
 <body>
     <!-- Barre de navigation -->
     <div class="navbar">
+        <div class="logo">
+            <!-- Lien autour de l'image pour rediriger vers accueil.php -->
+            <a href="accueil.php">
+                <img src="img/nice.png" alt="" width="50" height="50">
+            </a>
+        </div>
         <div class="inscription-button">
-            <a href="index.html">Connexion</a>
+            <a href="connexion.php">Connexion</a>
         </div>
     </div>
-
+    
     <!-- Zone pour mettre une image -->
     <div class="image-container">
         <img src="img/nice.png" alt="">
         <!-- Mettez votre image ici -->
     </div>
 
-    
-
-<div class="container">
-    
-    <div class="form">
-        <form id="inscriptionForm" action="accueil.html" method="post">
+    <div class="container">
+        <div class="form">
+            <form id="inscriptionForm" action="accueil.php" method="post">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
 

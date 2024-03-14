@@ -10,7 +10,7 @@ body {
     background-color: black;
     padding: 30px 30px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .inscription-button a {
