@@ -1,13 +1,12 @@
 // Array of week trainings
 var weekTrainings = [
-  { id: 1, trainingTitle: "PEC - DOS" },
+  { id: 1, trainingTitle: "PEC-DOS" },
   { id: 2, trainingTitle: "JAMBES" },
-  { id: 3, trainingTitle: "EPAULE - BICEPS - TRICEPS" }
+  { id: 3, trainingTitle: "EPAULE-BICEPS-TRICEPS" }
 ];
 
 // Attend que la page soit entièrement chargée avant d'exécuter le script
 window.onload = function () {
-  displayWeekTrainings();
   document
     .getElementById("inscriptionForm")
     .addEventListener("submit", function (event) {
@@ -43,6 +42,7 @@ function displayWeekTrainings() {
     var trainingTitle = document.createElement("h1");
     trainingTitle.textContent =
       "Séance " + training.id + " : " + training.trainingTitle;
+    trainingTitle.classList.add("training-title");
     trainingTitle.style.borderTop = "orange 2px solid";
     trainingTitle.style.borderBottom = "orange 2px solid";
     trainingTitle.style.paddingTop = "2%";
@@ -65,6 +65,7 @@ function displayWeekSummary(trainingList) {
     trainingListDSummaryDOM.appendChild(div);
     var h2 = document.createElement("h2");
     h2.textContent = "Séance " + training.id + " :";
+    h2.classList.add("summary-training-title");
     var listItem = document.createElement("h2");
     listItem.textContent = training.trainingTitle;
     listItem.style.color = "white";
