@@ -13,7 +13,7 @@ body {
 
 .container {
     width: 100%;
-    margin: 50px auto; /* Marge automatique sur le haut et le bas, centrage horizontal */
+    margin: 500px auto; /* Marge automatique sur le haut et le bas, centrage horizontal */
     text-align: center; /* Centrage des éléments internes */
 }
 
