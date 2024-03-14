@@ -77,7 +77,7 @@ require_once 'includes/config.php';
                 </select>
 
                 <label for="seances">Nombre de séances par semaine souhaitées (maximum 7) :</label>
-                <input type="number" id="seances" name="seances" min="1" max="7" required>
+                <input type="number" id="seances" name="seances" min="1" max="6" required>
 
                 <input type="submit" value="Finaliser l'inscription" class="submit-button">
 
