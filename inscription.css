@@ -5,30 +5,7 @@ body {
     padding: 0;
 }
 
-/* Barre de navigation */
-.navbar {
-    background-color: #333; /* Couleur de fond */
-    overflow: hidden;
-}
 
-.navbar .logo img {
-    width: 50px;
-    height: 50px;
-}
-
-.navbar a {
-    float: right;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-}
-
-.navbar a:hover {
-    background-color: #ddd; /* Couleur de fond au survol */
-    color: black;
-}
 
 /* Zone pour mettre une image */
 .image-container {
@@ -37,35 +14,53 @@ body {
 }
 
 .container {
-    width: 100%;
+    width: 400px;
     margin: 50px auto; /* Marge automatique sur le haut et le bas, centrage horizontal */
     text-align: center; /* Centrage des éléments internes */
+}
+
+.text {
+    text-align: center;
+    margin-bottom: 20px; /* Ajout d'un espace en dessous du texte */
 }
 
 .form {
     width: 100%; /* Pour centrer le formulaire */
     max-width: 400px; /* Limiter la largeur du formulaire */
     margin: 0 auto; /* Centrage horizontal */
-    padding: 20px; /* Ajout de padding pour les petits écrans */
-    background-color: #f2f2f2; /* Couleur de fond */
-    border-radius: 10px; /* Coins arrondis */
 }
 
 .form label {
     display: block;
-    margin-bottom: 10px;
-    color: #fff; /* Couleur blanche */
-    font-size: 18px;
+    margin-bottom: 5px;
+    text-align: center; /* Centrage horizontal du texte */
+    color: orange; /* Couleur orange */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre */
+    font-style: italic; /* Texte en italique */
 }
 
 .form input,
 .form select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: none;
+    width: 100%; /* Remplissage de la largeur du formulaire */
+    box-sizing: border-box; /* Pour inclure le padding et la bordure dans la largeur */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
 }
 
+.form input[type="submit"] {
+    width: 100%; /* Remplissage de la largeur du bouton */
+    background-color: orange;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.form input[type="submit"]:hover {
+    background-color: orange;
+}
