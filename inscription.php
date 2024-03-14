@@ -1,5 +1,6 @@
 <?php
-require_once 'includes/config.php'; ?>
+require_once 'includes/config.php'; 
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -31,7 +32,7 @@ require_once 'includes/config.php'; ?>
 
     <div class="container">
         <div class="form">
-            <form id="inscriptionForm" action="accueil.php" method="post">
+            <form id="inscriptionForm" action="programmeSportif.php" method="post">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
 
