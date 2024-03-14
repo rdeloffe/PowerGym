@@ -17,7 +17,7 @@
         <div class="logo">
             <!-- Lien autour de l'image pour rediriger vers accueil.php -->
             <a href="accueil.php">
-                <img src="img/nice.png" alt="" width="5" height="5">
+                <img src="img/nice.png" alt="" width="50" height="50">
             </a>
         </div>
         <div class="inscription-button">
@@ -76,7 +76,7 @@
                 <label for="seances">Nombre de séances par semaine souhaitées (maximum 7) :</label>
                 <input type="number" id="seances" name="seances" min="1" max="7" required>
 
-                <input type="submit" value="Finaliser l'inscription" class="submit-button" onclick="event.preventDefault(); verifyPassword(); showFormData();">
+                <input type="submit" value="Finaliser l'inscription" class="submit-button">
 
 
             </form>
@@ -125,37 +125,7 @@
             }
         }
 
-        // Fonction pour récupérer les valeurs du formulaire et les afficher
-        function showFormData() {
-            var nom = document.getElementById("nom").value;
-            var prenom = document.getElementById("prenom").value;
-            var email = document.getElementById("email").value;
-            var identiteAge = document.getElementById("identite-age").value;
-            var identiteTaille = document.getElementById("identite-taille").value;
-            var identitePoids = document.getElementById("identite-poids").value;
-            var objectif = document.getElementById("objectif").value;
-            var seances = document.getElementById("seances").value;
-
-            // Affichage des informations dans la page
-            var formDataContainer = document.getElementById("formData");
-            formDataContainer.innerHTML = "<h2>Informations de l'utilisateur :</h2>" +
-                "<p><strong>Nom :</strong> " + nom + "</p>" +
-                "<p><strong>Prénom :</strong> " + prenom + "</p>" +
-                "<p><strong>Email :</strong> " + email + "</p>" +
-                "<p><strong>Âge :</strong> " + identiteAge + "</p>" +
-                "<p><strong>Taille :</strong> " + identiteTaille + " cm</p>" +
-                "<p><strong>Poids :</strong> " + identitePoids + " kg</p>" +
-                "<p><strong>Objectif du programme :</strong> " + objectif + "</p>" +
-                "<p><strong>Nombre de séances par semaine :</strong> " + seances + "</p>";
-
-            // Masquer le formulaire
-            document.getElementById("part1").style.display = "none";
-            document.getElementById("part2").style.display = "none";
-        }
     </script>
-
-
-
 
 </body>
 

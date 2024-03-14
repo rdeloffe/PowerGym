@@ -18,7 +18,7 @@
             </a>
         </div>
         <div class="inscription-button">
-            <a href="connexion.php">Connexion</a>
+            <a href="inscription.php">Inscription</a>
         </div>
     </div>
 
