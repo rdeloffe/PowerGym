@@ -36,7 +36,7 @@ require_once 'includes/config.php';
 
     <div class="container">
         <div class="form" id="part1">
-            <form id="inscriptionForm" action="accueil.php" method="post">
+            <form id="inscriptionForm" action="programme.php" method="post">
                 <label for="nom">Nom :</label>
                 <input type="text" id="nom" name="nom" required>
 
@@ -59,7 +59,7 @@ require_once 'includes/config.php';
             </form>
         </div>
         <div class="form" id="part2" style="display: none;">
-            <form id="inscriptionForm2" action="accueil.php" method="post">
+            <form id="inscriptionForm2" action="programme.php" method="post">
                 <label for="identite-age">Âge :</label>
                 <input type="number" id="identite-age" name="identite-age" required>
 

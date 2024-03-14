@@ -33,7 +33,7 @@
 <div class="container">
     
     <div class="form">
-        <form id="connexionForm" action="" method="post">
+        <form id="connexionForm" action="programme.php" method="post">
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
 
