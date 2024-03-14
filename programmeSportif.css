@@ -64,6 +64,14 @@ body {
     width: 100%;
 }
 
+.summary-training-title {
+    white-space: nowrap;
+}
+
+.training-title {
+    font-size: medium;
+}
+
 li {
     list-style-type: none;
     margin-bottom: 10px;
@@ -71,6 +79,9 @@ li {
 }
 
 h2{
+    text-align: justify;
+    padding-right: 2%;
+    font-size: medium;
     color: orange;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
