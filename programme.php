@@ -1,3 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Programme Sportif</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .programme {
+            margin-bottom: 20px;
+        }
+        .seance {
+            background-color: #ffffff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .exercice {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
 <?php
 
 require_once 'includes/config.php';
@@ -91,7 +119,86 @@ if ($stmt = $conn->prepare($query)) {
         if ($rowProgramme = $resultProgramme->fetch_assoc()) {
             // Maintenant, $rowProgramme contient les informations du programme correspondant
             // Vous pouvez utiliser ces informations pour les afficher à l'utilisateur ou pour d'autres traitements
-            echo "Programme correspondant trouvé : " . $rowProgramme['nom'];
+        
+            echo "<div class='programme'>";
+            echo "<h1>Programme : " . $rowProgramme['nom'] . "</h1>";
+
+             // ID du programme trouvé
+             $idProgrammeTrouve = $rowProgramme['id_programme'];
+
+            // Préparer la requête SQL pour récupérer les séances associées à ce programme
+            $querySeances = "SELECT * FROM seance WHERE id_programme = ?";
+            
+    if ($stmtSeances = $conn->prepare($querySeances)) {
+        // Lier le paramètre id_programme avec le placeholder
+        $stmtSeances->bind_param("i", $idProgrammeTrouve);
+        $stmtSeances->execute();
+        $resultSeances = $stmtSeances->get_result();
+        
+        // Vérifier s'il y a des séances associées
+        if ($resultSeances->num_rows > 0) {
+            // Récupérer et traiter chaque séance   
+            while ($rowSeance = $resultSeances->fetch_assoc()) {
+                echo "<div class='seance'>";
+                echo "<h2>Séance : " . $rowSeance['nom'] . "</h2>";
+                // Vous pouvez ici récupérer d'autres détails de la séance
+                // ID de la séance actuelle
+                $idSeanceActuelle = $rowSeance['id_seance'];
+
+                // Préparer la requête SQL pour récupérer les exercices de cette séance
+                $queryExercices = "SELECT * FROM seance_exo WHERE id_seance = ?";
+
+                if ($stmtExercices = $conn->prepare($queryExercices)) {
+                    // Lier le paramètre id_seance avec le placeholder
+                    $stmtExercices->bind_param("i", $idSeanceActuelle);
+                    $stmtExercices->execute();
+                    $resultExercices = $stmtExercices->get_result();
+
+                    // Vérifier s'il y a des exercices associés
+                    if ($resultExercices->num_rows > 0) {
+                        // Récupérer et traiter chaque exercice
+                        while ($rowExercice = $resultExercices->fetch_assoc()) {
+                            // Vous pouvez ici récupérer d'autres détails de l'
+                            // rechercher les exercices en fonction de l'id_exercice
+                            $idExerciceActuel = $rowExercice['id_exercice'];
+                            $queryExercice = "SELECT * FROM exercices WHERE id= ?";
+                            if ($stmtExercice = $conn->prepare($queryExercice)) {
+                                $stmtExercice->bind_param("i", $idExerciceActuel);
+                                $stmtExercice->execute();
+                                $resultExercice = $stmtExercice->get_result();
+                                if ($rowExercice = $resultExercice->fetch_assoc()) {
+                                    echo "<div class='exercice'>";
+                                    echo "<p>Exercice : " . $rowExercice['nom'] . "</p>";
+                                    echo "<p>Nombre de séries : " . $rowExercice['nombre_series'] . "</p>";
+                                    echo "<p>Nombre de répétitions : " . $rowExercice['nombre_repetitions'] . "</p>";
+                                    echo "<p>Description : " . $rowExercice['description'] . "</p>"; // Fin div exercice
+                                    echo "</div>"; // Fin div exercice
+                                    echo "<br>";
+                                }
+                                $stmtExercice->close();
+                            } else {
+                                echo "Erreur de préparation : " . $conn->error;
+                            }
+                        }
+                    } else {
+                        echo "Aucun exercice trouvé pour cette séance.";
+                    }
+
+                    $stmtExercices->close();
+                } else {
+                    echo "Erreur de préparation : " . $conn->error;
+                }
+        
+            }
+        } else {
+            echo "Aucune séance trouvée pour ce programme.";
+        }
+
+        $stmtSeances->close();
+    } else {
+        echo "Erreur de préparation : " . $conn->error;
+    }
+
         } else {
             echo "Aucun programme correspondant trouvé.";
         }
@@ -109,7 +216,7 @@ if ($stmt = $conn->prepare($query)) {
 // Fermer la connexion à la base de données
 $conn->close();
 
-// Par exemple, afficher l'identifiant de l'utilisateur
-echo "Identifiant de l'utilisateur : " . $user_id;
-echo '<br>Vous êtes connecté en tant que : ' . $email;
 ?>
+
+</body>
+</html>
