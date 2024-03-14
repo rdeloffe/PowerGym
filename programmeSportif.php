@@ -10,6 +10,12 @@
 <body>
     <!-- Barre de navigation -->
     <div class="navbar">
+        <div class="logo">
+            <!-- Lien autour de l'image pour rediriger vers accueil.php -->
+            <a href="accueil.php">
+                <img src="img/nice.png" alt="" width="50" height="50">
+            </a>
+        </div>
         <div class="inscription-button">
             <a href="index.html">Connexion</a>
         </div>
